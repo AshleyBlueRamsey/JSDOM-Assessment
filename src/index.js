@@ -345,7 +345,10 @@ function loadCities(contacts) {
 /*
   Remove the contact from the contact list with the given id.
 */
-function deleteContact(id) {}
+function deleteContact(id) {
+  const index = contacts.findIndex((contact) => contact.id === +id);
+  index >= 0 && contacts.splice(index, 1);
+}
 
 /*
   Add a `click` event handler to the `deleteBtn` elements.
