@@ -333,7 +333,14 @@ function filterHandler() {
   Create a list of cities from the contacts array with no duplicates then
   add an `<option>` element for each city to the select.
 */
-function loadCities(contacts) {}
+function loadCities(contacts) {
+  const cities = Array.from (
+    new Set(contacts.map((contact) => contact.address.city)).values()
+  ).map((city) => `<option value="${city}">${city}</option>`);
+  const select = document.querySelector("#filterOptions");
+  cities.unshift('option value="0">-- Select a city --</option>');
+  select.innerHTML = cities.join ("");
+}
 
 /*
   Remove the contact from the contact list with the given id.
