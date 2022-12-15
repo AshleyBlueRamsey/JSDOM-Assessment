@@ -314,7 +314,18 @@ function filterByCity(city) {
   If the value is not "0" call `filterByCity()` passing the value selected by
   the user. Then call `render()` with the filtered list.
 */
-function filterHandler() {}
+function filterHandler() {
+  const select = document.querySelector("#filterOptions");
+  
+  select.addEventListener("change", (event) => {
+    const selected = event.target.value;
+    if (selected === "0") {
+      render(contacts);
+    } else {
+      render(filterByCity(selected));
+    }
+  });
+}
 
 /*
   Accepts an array of contacts.
