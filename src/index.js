@@ -356,7 +356,15 @@ function deleteContact(id) {
   corresponding `data-id` then call `deleteContact()` and re-render 
   the list.
 */
-function deleteButtonHandler() {}
+function deleteButtonHandler() {
+  const contactsElement = document.querySelector("#contacts");
+  contactsElement.addEventListener("click", (event) => {
+    const card = event.target.parentNode;
+    deleteContact(card.dataset.id);
+    loadCities(contacts);
+    render(contacts);
+  });
+}
 
 /*
   Perform all startup tasks here. Use this function to attach the 
