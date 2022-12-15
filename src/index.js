@@ -370,7 +370,11 @@ function deleteButtonHandler() {
   Perform all startup tasks here. Use this function to attach the 
   required event listeners, call loadCities() then call render().
 */
-function main() {}
+function main() {
+  filterHandler();
+  deleteButtonHandler();
+  render(contacts);
+}
 
 window.addEventListener("DOMContentLoaded", main);
 
