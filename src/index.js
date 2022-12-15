@@ -292,7 +292,11 @@ function renderContact(contact) {
   Render the array of contacts and insert them on the DOM.
   The contacts should be rendered in the `section` with id "contacts".
 */
-function render(contacts) {}
+function render(contacts) {
+  const element = document.querySelector("#contacts");
+  element.innerHTML = contacts.map(renderContact).join("");
+  loadCities(contacts);
+}
 
 /*
   Filter by city. Filter the  array of contacts by the given city.
