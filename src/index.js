@@ -334,12 +334,12 @@ function filterHandler() {
   add an `<option>` element for each city to the select.
 */
 function loadCities(contacts) {
-  const cities = Array.from (
-    new Set(contacts.map((contact) => contact.address.city)).values()
-  ).map((city) => `<option value="${city}">${city}</option>`);
-  const select = document.querySelector("#filterOptions");
-  cities.unshift('option value="0">-- Select a city --</option>');
-  select.innerHTML = cities.join ("");
+    const cities = Array.from(
+      new Set(contacts.map((contact) => contact.address.city)).values()
+    ).map((city) => `<option value="${city}">${city}</option>`);
+    const select = document.querySelector("#filterOptions");
+    cities.unshift('<option value="0">-- Select a city --</option>');
+    select.innerHTML = cities.join("");
 }
 
 /*
